@@ -1,0 +1,41 @@
+.toggle-showcase-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  font-family: "Inter", sans-serif;
+  line-height: 1.7;
+}
+
+.toggle-showcase-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+.dark .toggle-showcase-title {
+  color: #f9fafb;
+}
+
+.toggle-showcase-intro {
+  margin-bottom: 3rem;
+  color: #374151;
+}
+.dark .toggle-showcase-intro {
+  color: #d1d5db;
+}
+
+.toggle-demo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+
+.toggle-status {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.dark .toggle-status {
+  color: #e5e7eb;
+}

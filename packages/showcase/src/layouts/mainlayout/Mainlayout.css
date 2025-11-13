@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden; 
+  background-color: #ffffff;
+  color: #1a202c;
+  transition: background-color 0.3s ease;
+}
+
+.main-layout.dark {
+  background-color: #1a202c;
+  color: #e2e8f0;
+}
+
+.main-container {
+  display: flex;
+  width: 100%;
+  flex: 1;
+  overflow: hidden; 
+  position: relative;
+}
+
+.content-area {
+  flex: 1;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.content-wrapper {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-width: 100%;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  height: 100%;
+}
+
+.content-wrapper::-webkit-scrollbar {
+  width: 8px;
+}
+
+.content-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.content-wrapper::-webkit-scrollbar-thumb {
+  background-color: #cbd5e0;
+  border-radius: 4px;
+}
+
+.content-wrapper::-webkit-scrollbar-thumb:hover {
+  background-color: #a0aec0;
+}
+
+.main-layout.dark .content-wrapper::-webkit-scrollbar-thumb {
+  background-color: #4a5568;
+}
+
+.main-layout.dark .content-wrapper::-webkit-scrollbar-thumb:hover {
+  background-color: #718096;
+}
+
+/* Sidebar Overlay */
+.sidebar-overlay {
+  display: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .content-wrapper {
+    padding: 1rem;
+    padding-bottom: 400px; /* Space for fixed footer */
+  }
+
+  .sidebar-overlay {
+    display: block;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .sidebar-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-wrapper {
+    padding: 0.75rem;
+    padding-bottom: 450px; /* More space for footer on smaller screens */
+  }
+}

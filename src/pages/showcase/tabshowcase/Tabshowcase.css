@@ -1,0 +1,128 @@
+.tab-showcase-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  font-family: "Inter", sans-serif;
+  line-height: 1.7;
+  color: #1a202c;
+  transition: all 0.3s ease;
+  height: auto;
+  overflow: visible;
+}
+
+.dark .tab-showcase-container {
+  color: #e2e8f0;
+}
+
+.tab-showcase-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.dark .tab-showcase-title {
+  color: #e2e8f0;
+}
+
+.tab-showcase-intro {
+  font-size: 1rem;
+  max-width: 72rem;
+  color: #4a5568;
+  margin-bottom: 3rem;
+}
+
+.dark .tab-showcase-intro {
+  color: #a0aec0;
+}
+
+.best-practices-section {
+  margin-top: 6rem;
+}
+
+.best-practices-title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.best-practices-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .best-practices-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.dos-card {
+  background-color: rgb(239 246 255);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+}
+
+.donts-card {
+  background-color: rgb(254 242 242);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+}
+
+.dark .dos-card {
+  background-color: rgb(30 58 138 / 0.2);
+}
+
+.dark .donts-card {
+  background-color: rgb(153 27 27 / 0.2);
+}
+
+.card-header-do,
+.card-header-dont {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.card-header-do {
+  color: rgb(30 58 138);
+}
+
+.card-header-dont {
+  color: rgb(153 27 27);
+}
+
+.dark .card-header-do {
+  color: rgb(219 234 254);
+}
+
+.dark .card-header-dont {
+  color: rgb(254 202 202);
+}
+
+.dos-list,
+.donts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style-type: disc;
+  margin-left: 1rem;
+}
+
+.dos-list {
+  color: rgb(30 64 175);
+}
+
+.donts-list {
+  color: rgb(153 27 27);
+}
+
+.dark .dos-list {
+  color: rgb(191 219 254);
+}
+
+.dark .donts-list {
+  color: rgb(254 202 202);
+}

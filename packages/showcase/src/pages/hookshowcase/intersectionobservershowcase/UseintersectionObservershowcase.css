@@ -1,0 +1,97 @@
+.intersection-showcase-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.7;
+  color: #1a202c;
+}
+
+
+.dark .intersection-showcase-container {
+  color: #e2e8f0;
+}
+
+.intersection-showcase-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.dark .intersection-showcase-title {
+  color: #e2e8f0;
+}
+
+.intersection-showcase-intro {
+  margin-bottom: 2rem;
+  color: #4a5568;
+}
+
+.dark .intersection-showcase-intro {
+  color: #a0aec0;
+}
+
+.intersection-demo-box {
+  border: 1px solid #e2e8f0;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background-color: #fff;
+  position: relative;
+  min-height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.observer-box {
+  width: 200px;
+  height: 200px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1rem;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.observer-box.hidden {
+  background-color: gray;
+  transform: translateY(20px);
+  opacity: 0.5;
+}
+
+.observer-box.visible {
+  background-color: green;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Best Practices Section */
+.intersection-best-practices-section { 
+  margin-top: 4rem; 
+}
+
+.intersection-best-practices-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #111827;
+}
+
+.dark .intersection-best-practices-title {
+  color: #f9fafb;
+}
+
+.intersection-best-practices-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .intersection-best-practices-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

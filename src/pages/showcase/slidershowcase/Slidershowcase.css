@@ -1,0 +1,113 @@
+.slider-showcase-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  font-family: "Inter", sans-serif;
+  line-height: 1.7;
+  color: #1a202c;
+  transition: all 0.3s ease;
+}
+
+/* Header Section */
+.slider-showcase-header {
+  margin-bottom: 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.slider-showcase-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.dark .slider-showcase-title {
+  color: #e2e8f0;
+}
+
+.dark .slider-showcase-container {
+  color: #e2e8f0;
+}
+
+.slider-showcase-description {
+  font-size: 1rem;
+  color: #4b5563;
+  max-width: 600px;
+}
+.dark .slider-showcase-description {
+  color: #a0aec0;
+}
+
+/* Example Sections */
+.slider-showcase-examples {
+  /* display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem 0; */
+}
+
+.showcase-examples-test {
+  display: flex;
+  /* direction: column; */
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-bottom: 2.5rem;
+  width: 100%;
+}
+
+
+/* Best Practices */
+.best-practices-section {
+  margin-top: 6rem;
+}
+
+.best-practices-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #111827;
+}
+.dark .best-practices-title {
+  color: #e2e8f0;
+}
+
+.best-practices-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.dos-card,
+.donts-card {
+  border-radius: 12px;
+  padding: 1.5rem;
+  background-color: #f9fafb;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.card-header-do {
+  color: #16a34a;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.card-header-dont {
+  color: #dc2626;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.dos-list,
+.donts-list {
+  list-style: disc;
+  margin-left: 1.5rem;
+  color: #374151;
+}
+
+@media (max-width: 768px) {
+  .best-practices-grid {
+    grid-template-columns: 1fr;
+  }
+}
