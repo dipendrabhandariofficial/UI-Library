@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import ShowcaseContainer from "../../showcase/ShowcaseContainer";
 import useIntersectionObserver from "../../../hooks/useIntersectionObserver";
-import "./UseIntersectionObserverShowcase.css";
+import "../intersectionobservershowcase/UseintersectionObserverShowcase.css";
 
 export default function IntersectionObserverShowcase() {
   const [isVisible, setIsVisible] = useState(false);
