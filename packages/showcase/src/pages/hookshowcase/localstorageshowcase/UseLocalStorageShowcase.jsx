@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import ShowcaseContainer from "../../showcase/ShowcaseContainer";
-import useLocalStorage from "../../../hooks/useLocalStorage";
+import ShowcaseContainer from "../../showcase/ShowcaseContainer"
+import {useLocalStorage} from "@dipendrabhandari/react-ui-library"
 import "./UseLocalStorageShowcase.css";
-import { Button } from "../../../components/button/Button";
+import { Button } from "@dipendrabhandari/react-ui-library"
 
 export default function UseLocalStorageShowcase() {
   const [userName, setUserName] = useState("");

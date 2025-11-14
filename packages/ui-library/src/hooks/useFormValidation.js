@@ -5,7 +5,7 @@ export const validateForm = (values, rules = {}) => {
   Object.keys(rules).forEach((field) => {
     const value = values[field];
     const fieldRules = rules[field];
-    console.log("🚀 ~ validateForm ~ fieldRules:", fieldRules)
+    console.log("🚀 ~ validateForm ~ fieldRules:", fieldRules);
 
     // Skip validation if field has no value and is not required
     if (!fieldRules.isRequired && (!value || value === "")) {
@@ -16,11 +16,14 @@ export const validateForm = (values, rules = {}) => {
     if (fieldRules.isRequired) {
       if (typeof value === "boolean") {
         if (!value) {
-          errors[field] = fieldRules.msg?.isRequired || `${formatFieldName(field)} is required`;
+          errors[field] =
+            fieldRules.msg?.isRequired ||
+            `${formatFieldName(field)} is required`;
           return;
         }
       } else if (!value || (typeof value === "string" && !value.trim())) {
-        errors[field] = fieldRules.msg?.isRequired || `${formatFieldName(field)} is required`;
+        errors[field] =
+          fieldRules.msg?.isRequired || `${formatFieldName(field)} is required`;
         return;
       }
     }
@@ -32,7 +35,9 @@ export const validateForm = (values, rules = {}) => {
     if (fieldRules.minLength && stringValue.length < fieldRules.minLength) {
       errors[field] =
         fieldRules.msg?.minLength ||
-        `${formatFieldName(field)} must be at least ${fieldRules.minLength} characters`;
+        `${formatFieldName(field)} must be at least ${
+          fieldRules.minLength
+        } characters`;
       return;
     }
 
@@ -40,7 +45,9 @@ export const validateForm = (values, rules = {}) => {
     if (fieldRules.maxLength && stringValue.length > fieldRules.maxLength) {
       errors[field] =
         fieldRules.msg?.maxLength ||
-        `${formatFieldName(field)} must not exceed ${fieldRules.maxLength} characters`;
+        `${formatFieldName(field)} must not exceed ${
+          fieldRules.maxLength
+        } characters`;
       return;
     }
 
@@ -88,20 +95,27 @@ export const validateForm = (values, rules = {}) => {
     //  Phone pattern
     if (fieldRules.pattern === "phone") {
       const phoneRegex = /^[\d\s\-\+\(\)]+$/;
-      if (!phoneRegex.test(stringValue) || stringValue.replace(/\D/g, "").length < 10) {
+      if (
+        !phoneRegex.test(stringValue) ||
+        stringValue.replace(/\D/g, "").length < 10
+      ) {
         errors[field] = fieldRules.msg?.pattern || "Invalid phone number";
         return;
       }
     }
 
     // Custom Regex (if provided as string)
-    if (typeof fieldRules.pattern === "string" && 
-        fieldRules.pattern !== "email" && 
-        fieldRules.pattern !== "url" && 
-        fieldRules.pattern !== "phone") {
+    if (
+      typeof fieldRules.pattern === "string" &&
+      fieldRules.pattern !== "email" &&
+      fieldRules.pattern !== "url" &&
+      fieldRules.pattern !== "phone"
+    ) {
       const regex = new RegExp(fieldRules.pattern);
       if (!regex.test(stringValue)) {
-        errors[field] = fieldRules.msg?.pattern || `${formatFieldName(field)} format is invalid`;
+        errors[field] =
+          fieldRules.msg?.pattern ||
+          `${formatFieldName(field)} format is invalid`;
         return;
       }
     }
@@ -109,7 +123,9 @@ export const validateForm = (values, rules = {}) => {
     //  Custom Regex (if provided as RegExp object)
     if (fieldRules.pattern instanceof RegExp) {
       if (!fieldRules.pattern.test(stringValue)) {
-        errors[field] = fieldRules.msg?.pattern || `${formatFieldName(field)} format is invalid`;
+        errors[field] =
+          fieldRules.msg?.pattern ||
+          `${formatFieldName(field)} format is invalid`;
         return;
       }
     }
@@ -155,7 +171,7 @@ const formatFieldName = (field) => {
  * @param {Object} options - Additional options
  * @returns {Object} - Form state and handlers
  */
-export const useFormValidation = (initialValues, formRules, options = {}) => {
+const useFormValidation = (initialValues, formRules, options = {}) => {
   const {
     validateOnChange = false,
     validateOnBlur = true,
@@ -172,7 +188,7 @@ export const useFormValidation = (initialValues, formRules, options = {}) => {
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     const newValue = type === "checkbox" ? checked : value;
-    
+
     setValues((prev) => ({ ...prev, [name]: newValue }));
 
     // Validate on change if option is enabled
@@ -295,3 +311,5 @@ export const useFormValidation = (initialValues, formRules, options = {}) => {
     validateAll,
   };
 };
+export default useFormValidation;
+

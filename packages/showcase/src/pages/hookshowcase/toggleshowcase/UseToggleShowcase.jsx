@@ -1,7 +1,7 @@
 import React from "react";
-import ShowcaseContainer from "../../showcase/ShowcaseContainer";
-import { Button } from "../../../components/button/Button";
-import useToggle from "../../../hooks/useToggle";
+import ShowcaseContainer from "../../showcase/ShowcaseContainer"
+import { Button } from "@dipendrabhandari/react-ui-library"
+import {useToggle} from "@dipendrabhandari/react-ui-library"
 import "./UseToggleShowcase.css";
 
 export default function UseToggleShowcase() {

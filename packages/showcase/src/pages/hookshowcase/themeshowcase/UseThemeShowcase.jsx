@@ -1,7 +1,7 @@
 import React from "react";
-import ShowcaseContainer from "../../showcase/ShowcaseContainer";
-import { Button } from "../../../components/button/Button";
-import useTheme from "../../../hooks/useTheme";
+import ShowcaseContainer from "../../showcase/ShowcaseContainer"
+import { Button } from "@dipendrabhandari/react-ui-library"
+import {useTheme} from "@dipendrabhandari/react-ui-library"
 import "./UseThemeShowcase.css";
 
 export default function UseThemeShowcase() {

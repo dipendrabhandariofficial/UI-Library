@@ -1,13 +1,18 @@
 {
-  "name": "my-app",
+  "name": "react-ui-library-monorepo",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "workspaces": [
+    "packages/ui-library",
+    "packages/showcase"
+  ],
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "dev:showcase": "npm run dev --workspace=packages/showcase",
+    "build:lib": "npm run build --workspace=packages/ui-library",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "npm run preview --workspace=packages/showcase"
   },
   "dependencies": {
     "lucide-react": "^0.546.0",

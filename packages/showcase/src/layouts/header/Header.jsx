@@ -11,9 +11,9 @@ import {
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import "./Header.css";
-import Dropdown from "../../components/dropdown/Dropdown";
+import { Dropdown } from "@dipendrabhandari/react-ui-library";
 import { sidebarSections } from "../../data/sidebarSections";
-import useClickOutside from "../../hooks/useClickOutside";
+import {useClickOutside} from "@dipendrabhandari/react-ui-library";
 
 const Header = ({ darkMode, toggleDarkMode, toggleSidebar }) => {
   const navigate = useNavigate();

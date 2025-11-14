@@ -15,4 +15,5 @@ export default function useClickOutside(ref, handler) {
       document.removeEventListener("touchstart", listener);
     };
   }, [ref, handler]);
+  
 }

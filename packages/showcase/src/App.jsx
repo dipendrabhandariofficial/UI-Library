@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import "./App.css";
 import AppRoute from "./router/AppRoute";
-import Slider from "./components/slider/Slider";
 
 function App() {
   return (

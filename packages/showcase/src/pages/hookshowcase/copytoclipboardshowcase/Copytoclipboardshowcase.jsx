@@ -1,7 +1,7 @@
 import React from "react";
 import ShowcaseContainer from "../../showcase/ShowcaseContainer";
-import { Button } from "../../../components/button/Button";
-import useCopyToClipboard from "../../../hooks/useCopyToClipboard";
+import { Button } from "@dipendrabhandari/react-ui-library";
+import {useCopyToClipboard} from "@dipendrabhandari/react-ui-library";
 import "./UseCopyToClipboardShowcase.css";
 import { Copy, ClipboardCheck } from "lucide-react";
 

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Slider from "../../../components/slider/Slider";
-import ShowcaseContainer from "../ShowcaseContainer";
+import {Slider} from "@dipendrabhandari/react-ui-library"
+import ShowcaseContainer from "../ShowcaseContainer"
 import "./Slidershowcase.css";
 
 const SliderShowcase = () => {

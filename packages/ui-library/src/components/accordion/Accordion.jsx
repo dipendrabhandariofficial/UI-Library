@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import styles from "./Accordion.module.css";
 
-export default function Accordion({
+export function Accordion({
   items = [],
   allowMultipleOpen = false,
   className = "",
@@ -71,3 +71,5 @@ export default function Accordion({
     </div>
   );
 }
+export default Accordion;
+

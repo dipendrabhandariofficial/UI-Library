@@ -1,0 +1,26 @@
+{
+  "name": "showcase",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Showcase website for React UI Library",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "dev:showcase": "cd packages/showcase && npm run dev"
+  },
+  "dependencies": {
+    "@dipendrabhandari/react-ui-library": "file:../ui-library",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.21.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.55.0",
+    "vite": "^5.0.8"
+  }
+}

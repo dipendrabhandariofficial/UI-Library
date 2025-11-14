@@ -1,25 +1,16 @@
-// UI Library Entry Point - Export all components and hooks
+// Library entry point - exports all components and hooks
 
-// ========== COMPONENTS ==========
-// Accordion
+// Components with simple default exports
 export { default as Accordion } from './components/accordion/Accordion';
-
-// Button
 export { default as Button } from './components/button/Button';
-
-// Dropdown
 export { default as Dropdown } from './components/dropdown/Dropdown';
-
-// Image Slider
 export { default as ImageSlider } from './components/imageslider/ImageSlider';
-
-// Slider
 export { default as Slider } from './components/slider/Slider';
 
-// Tabs
-export { default as Tabs } from './components/tabs/Tabs';
+// Tabs - has both default and named exports
+export { default as Tabs, TabsList, TabsTrigger, TabsContent } from './components/tabs/Tabs';
 
-// ========== HOOKS ==========
+// Hooks
 export { default as useClickOutside } from './hooks/useClickOutside';
 export { default as useCopyToClipboard } from './hooks/useCopyToClipboard';
 export { default as useFormValidation } from './hooks/useFormValidation';
@@ -27,7 +18,3 @@ export { default as useIntersectionObserver } from './hooks/useIntersectionObser
 export { default as useLocalStorage } from './hooks/useLocalStorage';
 export { default as useTheme } from './hooks/useTheme';
 export { default as useToggle } from './hooks/useToggle';
-
-// ========== DATA (if you want to export any utility data) ==========
-// You can export data if needed
-// export * from './data/yourDataFile';

@@ -1,0 +1,64 @@
+{
+  "name": "@dipendrabhandari/react-ui-library",
+  "version": "0.1.0",
+  "description": "A collection of reusable React components and hooks including Accordion, Button, Dropdown, ImageSlider, Slider, Tabs, and custom hooks",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "react",
+    "ui",
+    "components",
+    "hooks",
+    "accordion",
+    "button",
+    "dropdown",
+    "slider",
+    "tabs",
+    "imageslider",
+    "react-hooks",
+    "useClickOutside",
+    "useLocalStorage",
+    "useTheme",
+    "useToggle",
+    "useCopyToClipboard",
+    "useFormValidation",
+    "useIntersectionObserver"
+  ],
+  "author": "Dipendra Bhandari <dipendrabhandari0000@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dipendrabhandariofficial/UI-Library.git",
+    "directory": "packages/ui-library"
+  },
+  "bugs": {
+    "url": "https://github.com/dipendrabhandariofficial/UI-Library/issues"
+  },
+  "homepage": "https://github.com/dipendrabhandariofficial/UI-Library/tree/main/packages/ui-library#readme",
+  "peerDependencies": {
+  "react": "^19.0.0",
+  "react-dom": "^19.0.0"
+},
+  "devDependencies": {
+    "@babel/core": "^7.23.7",
+    "@babel/preset-react": "^7.23.3",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "rollup": "^4.9.4",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2"
+  }
+}

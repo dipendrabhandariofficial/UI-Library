@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
-import Accordion from "../../../components/accordion/Accordion"
-import useClickOutside from "../../../hooks/useClickOutside"
+import {Accordion} from "@dipendrabhandari/react-ui-library"
+import {useClickOutside} from "@dipendrabhandari/react-ui-library"
 import ShowcaseContainer from "../../showcase/ShowcaseContainer"
 import "./ClickOutsideShowcase.css";
 

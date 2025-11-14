@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
-import ShowcaseContainer from "../../showcase/ShowcaseContainer";
-import useIntersectionObserver from "../../../hooks/useIntersectionObserver";
+import ShowcaseContainer from "../../showcase/ShowcaseContainer"
+import {useIntersectionObserver} from "@dipendrabhandari/react-ui-library"
 import "./UseintersectionObserverShowcase.css";
 
 export default function IntersectionObserverShowcase() {

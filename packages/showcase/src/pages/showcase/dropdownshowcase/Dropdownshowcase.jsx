@@ -1,6 +1,6 @@
 import React from "react";
-import Dropdown from "../../../components/dropdown/Dropdown";
-import ShowcaseContainer from "../ShowcaseContainer";
+import {Dropdown} from "@dipendrabhandari/react-ui-library"
+import ShowcaseContainer from "../ShowcaseContainer"
 import "./Dropdownshowcase.css";
 
 export default function Dropdownshowcase() {

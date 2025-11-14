@@ -4,7 +4,7 @@ export default function useLocalStorage(key, initialValue) {
   // A ref to cache the current parsed value
   const cachedValue = useRef(readFromLocalStorage(key, initialValue));
 
-  // 🔹 1. Function to read safely from localStorage
+  //  1. Function to read safely from localStorage
   function readFromLocalStorage(key, defaultValue) {
     if (typeof window === "undefined") return defaultValue;
     try {
@@ -15,7 +15,7 @@ export default function useLocalStorage(key, initialValue) {
     }
   }
 
-  // 🔹 2. Define subscribe function — React calls this to listen for updates
+  //  Define subscribe function — React calls this to listen for updates
   const subscribe = useCallback((callback) => {
     const handler = (event) => {
       if (event.key && event.key !== key) return;
@@ -26,7 +26,7 @@ export default function useLocalStorage(key, initialValue) {
     return () => window.removeEventListener("storage", handler);
   }, [key]);
 
-  // 🔹 3. Define getSnapshot (cached)
+  //  Define getSnapshot (cached)
   const getSnapshot = useCallback(() => {
     const latest = readFromLocalStorage(key, initialValue);
 
@@ -38,10 +38,10 @@ export default function useLocalStorage(key, initialValue) {
     return cachedValue.current;
   }, [key, initialValue]);
 
-  // 🔹 4. Subscribe to storage using React’s external store API
+  //   Subscribe to storage using React’s external store API
   const value = useSyncExternalStore(subscribe, getSnapshot);
 
-  // 🔹 5. Writer helpers
+  // Writer helpers
   const setValue = useCallback(
     (newValue) => {
       const valueToStore =

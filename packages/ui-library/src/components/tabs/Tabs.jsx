@@ -4,7 +4,7 @@ import "./Tabs.css";
 // Create Context for Tabs
 const TabsContext = createContext();
 
-export function Tabs({ defaultValue, children, onChange, className = "" }) {
+export default function Tabs({ defaultValue, children, onChange, className = "" }) {
   const [activeTab, setActiveTab] = useState(defaultValue);
 
   const handleChange = (value) => {

@@ -26,7 +26,7 @@ const ShowcaseContainer = ({ title, children, code }) => {
           Preview
         </button>
         <button
-          className={`px-4 py-2 font-medium transition-colors w-fit dark:text-white ${
+          className={`px-4 py-2 font-medium transition-colors w-fit  ${
             activeTab === "code" ? "border-b-2 border-gray-800" : "text-gray-500"
           }`}
           onClick={() => setActiveTab("code")}

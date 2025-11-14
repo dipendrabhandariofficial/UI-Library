@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ShowcaseContainer from "../../showcase/ShowcaseContainer"
-import { useFormValidation } from "../../../hooks/useFormValidation"
+import { useFormValidation } from "@dipendrabhandari/react-ui-library"
 import "./UseFormValidationShowcase.css";
 
 export default function UseFormValidationShowcase() {

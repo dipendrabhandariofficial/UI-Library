@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "../../../components/button/Button";
+import { Button } from "@dipendrabhandari/react-ui-library"
 import ShowcaseContainer from "../ShowcaseContainer"
 import { FaPlus, FaArrowRight, FaStar, FaDownload, FaHeart } from "react-icons/fa";
 import "./ButtonShowcase.css";

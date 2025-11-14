@@ -1,5 +1,5 @@
 import React from "react";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "../../../components/tabs/Tabs";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@dipendrabhandari/react-ui-library"
 import ShowcaseContainer from "../ShowcaseContainer";
 import "./TabShowcase.css";
 

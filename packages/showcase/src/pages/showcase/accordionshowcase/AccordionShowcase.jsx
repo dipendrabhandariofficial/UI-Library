@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Accordion from "../../../components/accordion/Accordion"
+import {Accordion} from '@dipendrabhandari/react-ui-library'
 import ShowcaseContainer from "../ShowcaseContainer"
 import "./AccordionShowcase.css";
 
