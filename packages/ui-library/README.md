@@ -157,7 +157,7 @@ const [isOpen, toggle] = useToggle(false);
 
 ## 📖 Documentation
 
-For full documentation and live examples, visit the [showcase website](https://github.com/dipendrabhandariofficial/UI-Library).
+For full documentation and live examples, visit the [showcase website](https://dipendra-ui-library.vercel.app/overview).
 
 ## 🤝 Contributing
 
