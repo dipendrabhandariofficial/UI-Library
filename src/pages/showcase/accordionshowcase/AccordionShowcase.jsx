@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Accordion from "../../../components/accordion/Accordion"
 import ShowcaseContainer from "../ShowcaseContainer"
-import "./AccordionShowcase.css";
+import "../accordionshowcase/AccordionShowcase.css";
 
 export default function AccordionShowcase() {
   const accordionItems = [

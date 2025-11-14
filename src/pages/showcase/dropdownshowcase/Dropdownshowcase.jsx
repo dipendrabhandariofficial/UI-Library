@@ -1,7 +1,7 @@
 import React from "react";
 import Dropdown from "../../../components/dropdown/Dropdown";
 import ShowcaseContainer from "../ShowcaseContainer";
-import "./Dropdownshowcase.css";
+import "../dropdownshowcase/Dropdownshowcase.css";
 
 export default function Dropdownshowcase() {
   const options = ["React", "Vue", "Angular", "Svelte"];

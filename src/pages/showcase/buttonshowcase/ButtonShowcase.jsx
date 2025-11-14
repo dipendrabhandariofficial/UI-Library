@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "../../../components/button/Button";
 import ShowcaseContainer from "../ShowcaseContainer"
 import { FaPlus, FaArrowRight, FaStar, FaDownload, FaHeart } from "react-icons/fa";
-import "./ButtonShowcase.css";
+import "../buttonshowcase/ButtonShowcase.css";
 
 const ButtonShowcase = () => {
   return (

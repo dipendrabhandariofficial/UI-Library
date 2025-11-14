@@ -1,7 +1,7 @@
 import React from "react";
 import ImageSlider from "../../../components/imageslider/Imageslider";
 import ShowcaseContainer from "../ShowcaseContainer";
-import "./ImageSliderShowcase.css";
+import "../imageslidershowcase/Imageslidershowcase.css";
 
 export default function ImageSliderShowcase() {
   const images = [

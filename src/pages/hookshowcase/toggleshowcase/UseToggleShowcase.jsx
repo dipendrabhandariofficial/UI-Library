@@ -2,7 +2,7 @@ import React from "react";
 import ShowcaseContainer from "../../showcase/ShowcaseContainer";
 import { Button } from "../../../components/button/Button";
 import useToggle from "../../../hooks/useToggle";
-import "./UseToggleShowcase.css";
+import "../toggleshowcase/UseToggleShowcase.css";
 
 export default function UseToggleShowcase() {
   const usageCode1 = `import useToggle from "./useToggle";

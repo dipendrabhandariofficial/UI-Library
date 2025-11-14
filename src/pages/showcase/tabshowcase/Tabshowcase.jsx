@@ -1,7 +1,7 @@
 import React from "react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "../../../components/tabs/Tabs";
 import ShowcaseContainer from "../ShowcaseContainer";
-import "./TabShowcase.css";
+import "../tabshowcase/Tabshowcase.css";
 
 export default function TabShowcase() {
   const usageCode = `

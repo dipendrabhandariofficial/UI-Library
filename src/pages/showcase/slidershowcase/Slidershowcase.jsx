@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Slider from "../../../components/slider/Slider";
 import ShowcaseContainer from "../ShowcaseContainer";
-import "./Slidershowcase.css";
+import "../slidershowcase/Slidershowcase.css";
 
 const SliderShowcase = () => {
   const [volume, setVolume] = useState(50);

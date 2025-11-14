@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ShowcaseContainer from "../../showcase/ShowcaseContainer";
 import useLocalStorage from "../../../hooks/useLocalStorage";
-import "./UseLocalStorageShowcase.css";
+import "../localstorageshowcase/UseLocalStorageShowcase.css";
 import { Button } from "../../../components/button/Button";
 
 export default function UseLocalStorageShowcase() {

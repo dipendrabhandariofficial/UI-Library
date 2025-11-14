@@ -2,7 +2,7 @@ import React from "react";
 import ShowcaseContainer from "../../showcase/ShowcaseContainer";
 import { Button } from "../../../components/button/Button";
 import useTheme from "../../../hooks/useTheme";
-import "./UseThemeShowcase.css";
+import "../themeshowcase/UseThemeShowcase.css";
 
 export default function UseThemeShowcase() {
   const usageCode1 = `import useTheme from "./useTheme";
