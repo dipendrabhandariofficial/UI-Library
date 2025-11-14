@@ -16,7 +16,7 @@ import UseToggleShowcase from "../pages/hookshowcase/toggleshowcase/UseToggleSho
 import ClickOutsideShowcase from "../pages/hookshowcase/clickoutsideshowcase/Clickoutsideshowcase";
 import UseFormValidationShowcase from "../pages/hookshowcase/formvalidationshowcase/UseFormValidationShowcase";
 import Copytoclipboardshowcase from "../pages/hookshowcase/copytoclipboardshowcase/Copytoclipboardshowcase";
-import IntersectionObserverShowcase from "../pages/hookshowcase/intersectionobservershowcase/UseintersectionObserverShowcase";
+import IntersectionObserverShowcase from "../pages/hookshowcase/intersectionobservershowcase/UseIntersectionObserverShowcase";
 
 const AppRoute = () => {
   return (
