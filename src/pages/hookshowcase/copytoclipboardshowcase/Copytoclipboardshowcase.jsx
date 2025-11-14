@@ -2,7 +2,7 @@ import React from "react";
 import ShowcaseContainer from "../../showcase/ShowcaseContainer";
 import { Button } from "../../../components/button/Button";
 import useCopyToClipboard from "../../../hooks/useCopyToClipboard";
-import "../copytoclipboardshowcase/Copytoclipboardshowcase.css";
+import "../copytoclipboardshowcase/UseCopyToClipboardShowcase.css";
 import { Copy, ClipboardCheck } from "lucide-react";
 
 export default function UseCopyToClipboardShowcase() {
