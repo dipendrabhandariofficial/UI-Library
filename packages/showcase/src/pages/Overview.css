@@ -8,7 +8,6 @@
   transition: all 0.3s ease;
   height: auto;
   overflow: visible;
-  
 }
 
 .dark .overview-container {
@@ -32,8 +31,8 @@
   margin-bottom: 2rem;
   text-align: justify;
   max-width: 720px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .dark .overview-intro {
