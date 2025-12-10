@@ -5,7 +5,6 @@ export const validateForm = (values, rules = {}) => {
   Object.keys(rules).forEach((field) => {
     const value = values[field];
     const fieldRules = rules[field];
-    console.log("🚀 ~ validateForm ~ fieldRules:", fieldRules)
 
     // Skip validation if field has no value and is not required
     if (!fieldRules.isRequired && (!value || value === "")) {
@@ -95,10 +94,10 @@ export const validateForm = (values, rules = {}) => {
     }
 
     // Custom Regex (if provided as string)
-    if (typeof fieldRules.pattern === "string" && 
-        fieldRules.pattern !== "email" && 
-        fieldRules.pattern !== "url" && 
-        fieldRules.pattern !== "phone") {
+    if (typeof fieldRules.pattern === "string" &&
+      fieldRules.pattern !== "email" &&
+      fieldRules.pattern !== "url" &&
+      fieldRules.pattern !== "phone") {
       const regex = new RegExp(fieldRules.pattern);
       if (!regex.test(stringValue)) {
         errors[field] = fieldRules.msg?.pattern || `${formatFieldName(field)} format is invalid`;
@@ -172,7 +171,7 @@ export const useFormValidation = (initialValues, formRules, options = {}) => {
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     const newValue = type === "checkbox" ? checked : value;
-    
+
     setValues((prev) => ({ ...prev, [name]: newValue }));
 
     // Validate on change if option is enabled
