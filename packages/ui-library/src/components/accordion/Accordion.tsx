@@ -1,6 +1,21 @@
 import React, { useState, useRef } from "react";
 import styles from "./Accordion.module.css";
 
+export interface AccordionItem {
+  title: string;
+  content: React.ReactNode;
+}
+
+export interface AccordionProps {
+  items?: AccordionItem[];
+  allowMultipleOpen?: boolean;
+  className?: string;
+  itemClass?: string;
+  transitionSpeed?: number;
+  rounded?: boolean;
+  border?: boolean;
+}
+
 export function Accordion({
   items = [],
   allowMultipleOpen = false,
@@ -9,10 +24,10 @@ export function Accordion({
   transitionSpeed = 250, // ms
   rounded = true,
   border = true,
-}) {
-  const [openIndexes, setOpenIndexes] = useState([]);
+}: AccordionProps) {
+  const [openIndexes, setOpenIndexes] = useState<number[]>([]);
 
-  const toggleAccordion = (index) => {
+  const toggleAccordion = (index: number) => {
     if (allowMultipleOpen) {
       setOpenIndexes((prev) =>
         prev.includes(index)
@@ -31,7 +46,7 @@ export function Accordion({
       }`}
     >
       {items.map((item, index) => {
-        const ref = useRef(null);
+        const ref = useRef<HTMLDivElement>(null);
         const isOpen = openIndexes.includes(index);
 
         return (
@@ -72,4 +87,3 @@ export function Accordion({
   );
 }
 export default Accordion;
-

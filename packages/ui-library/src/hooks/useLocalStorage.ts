@@ -1,11 +1,8 @@
 import { useSyncExternalStore, useCallback, useRef } from "react";
 
-export default function useLocalStorage(key, initialValue) {
-  // A ref to cache the current parsed value
-  const cachedValue = useRef(readFromLocalStorage(key, initialValue));
-
-  // 🔹 1. Function to read safely from localStorage
-  function readFromLocalStorage(key, defaultValue) {
+export default function useLocalStorage<T>(key: string, initialValue: T) {
+  // 1. Safe reader
+  const readFromLocalStorage = (key: string, defaultValue: T): T => {
     if (typeof window === "undefined") return defaultValue;
     try {
       const item = localStorage.getItem(key);
@@ -13,24 +10,30 @@ export default function useLocalStorage(key, initialValue) {
     } catch {
       return defaultValue;
     }
-  }
+  };
 
-  // 🔹 2. Define subscribe function — React calls this to listen for updates
-  const subscribe = useCallback((callback) => {
-    const handler = (event) => {
-      if (event.key && event.key !== key) return;
-      // When storage changes (same or other tab), call the callback
-      callback();
-    };
-    window.addEventListener("storage", handler);
-    return () => window.removeEventListener("storage", handler);
-  }, [key]);
+  // Cache ref
+  const cachedValue = useRef<T>(readFromLocalStorage(key, initialValue));
 
-  // 🔹 3. Define getSnapshot (cached)
-  const getSnapshot = useCallback(() => {
+  // 2. Subscribe fn for useSyncExternalStore
+  const subscribe = useCallback(
+    (callback: () => void) => {
+      const handler = (event: StorageEvent) => {
+        if (event.key && event.key !== key) return;
+        callback();
+      };
+
+      window.addEventListener("storage", handler);
+      return () => window.removeEventListener("storage", handler);
+    },
+    [key]
+  );
+
+  // 3. Snapshot getter
+  const getSnapshot = useCallback((): T => {
     const latest = readFromLocalStorage(key, initialValue);
 
-    // Only update cached ref if data actually changed
+    // Update only if changed
     if (JSON.stringify(latest) !== JSON.stringify(cachedValue.current)) {
       cachedValue.current = latest;
     }
@@ -38,27 +41,29 @@ export default function useLocalStorage(key, initialValue) {
     return cachedValue.current;
   }, [key, initialValue]);
 
-  // 🔹 4. Subscribe to storage using React’s external store API
-  const value = useSyncExternalStore(subscribe, getSnapshot);
+  // 4. External store hook
+  const value = useSyncExternalStore<T>(subscribe, getSnapshot);
 
-  // 🔹 5. Writer helpers
+  // 5. Write helpers
   const setValue = useCallback(
-    (newValue) => {
+    (newValue: T | ((prev: T) => T)) => {
       const valueToStore =
-        newValue instanceof Function ? newValue(value) : newValue;
+        typeof newValue === "function"
+          ? (newValue as (prev: T) => T)(value)
+          : newValue;
 
       localStorage.setItem(key, JSON.stringify(valueToStore));
       cachedValue.current = valueToStore;
 
-      // Force sync in same tab (custom StorageEvent)
       window.dispatchEvent(new StorageEvent("storage", { key }));
     },
     [key, value]
   );
 
   const addValue = useCallback(
-    (newValue) => {
-      let updatedValue;
+    (newValue: any) => {
+      let updatedValue: any;
+
       if (Array.isArray(value)) updatedValue = [...value, newValue];
       else if (typeof value === "object" && value !== null)
         updatedValue = { ...value, ...newValue };
@@ -75,12 +80,14 @@ export default function useLocalStorage(key, initialValue) {
   const removeItem = useCallback(() => {
     localStorage.removeItem(key);
     cachedValue.current = initialValue;
+
     window.dispatchEvent(new StorageEvent("storage", { key }));
   }, [key, initialValue]);
 
   const clearStorage = useCallback(() => {
     localStorage.clear();
     cachedValue.current = initialValue;
+
     window.dispatchEvent(new StorageEvent("storage", { key }));
   }, [initialValue]);
 

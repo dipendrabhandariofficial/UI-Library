@@ -6,7 +6,7 @@ import postcss from 'rollup-plugin-postcss';
 import terser from '@rollup/plugin-terser';
 
 export default {
-  input: 'src/index.js',
+  input: 'src/index.ts',
   output: [
     {
       file: 'dist/index.js',
@@ -24,23 +24,23 @@ export default {
   plugins: [
     // Automatically externalize peerDependencies
     peerDepsExternal(),
-    
+
     // Resolve node_modules
     resolve({
-      extensions: ['.js', '.jsx']
+      extensions: ['.js', '.jsx', '.ts', '.tsx']
     }),
-    
+
     // Transpile JSX and modern JS
     babel({
       exclude: 'node_modules/**',
-      presets: ['@babel/preset-react'],
+      presets: ['@babel/preset-react', '@babel/preset-typescript'],
       babelHelpers: 'bundled',
-      extensions: ['.js', '.jsx']
+      extensions: ['.js', '.jsx', '.ts', '.tsx']
     }),
-    
+
     // Convert CommonJS to ES6
     commonjs(),
-    
+
     // Handle CSS files
     postcss({
       extensions: ['.css'],
@@ -48,11 +48,11 @@ export default {
       inject: true, // Inject CSS into JS
       extract: false // Don't extract CSS to separate file
     }),
-    
+
     // Minify the output
     terser()
   ],
-  
+
   // Don't bundle React and ReactDOM
   external: ['react', 'react-dom']
 };

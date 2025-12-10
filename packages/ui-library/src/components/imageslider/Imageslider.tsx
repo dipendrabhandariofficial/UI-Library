@@ -1,9 +1,18 @@
-import React, { use } from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import "./Imageslider.css";
 
-const Imageslider = ({
+interface ImagesliderProps {
+  images: string[];
+  width?: string;
+  height?: string;
+  autoPlay?: boolean;
+  autoPlayinterval?: number;
+  showarrows?: boolean;
+  showindicators?: boolean;
+}
+
+const Imageslider: React.FC<ImagesliderProps> = ({
   images = [],
   width = "600px",
   height = "400px",
@@ -11,7 +20,7 @@ const Imageslider = ({
   autoPlayinterval = 3000,
   showarrows = true,
   showindicators = true,
-}) => {
+}: ImagesliderProps) => {
   const [current, setCurrent] = useState(0);
 
   const prevSlide = () => {
@@ -66,4 +75,3 @@ const Imageslider = ({
 };
 
 export default Imageslider;
-

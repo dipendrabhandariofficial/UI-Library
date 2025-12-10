@@ -13,16 +13,20 @@ import { useState } from "react";
  *   setValue   // Function to set manually
  * }
  */
-export default function useToggle(initialValue = false) {
-  const [value, setValue] = useState(
+export default function useToggle(
+  initialValue: boolean | any[] = false
+): object {
+  const [value, setValue] = useState<any>(
     Array.isArray(initialValue) ? initialValue[1] : initialValue
   );
 
   const toggle = () => {
     if (Array.isArray(initialValue)) {
-      setValue((prev) => (prev === initialValue[0] ? initialValue[1] : initialValue[0]));
+      setValue((prev: any) =>
+        prev === initialValue[0] ? initialValue[1] : initialValue[0]
+      );
     } else {
-      setValue((prev) => !prev);
+      setValue((prev: any) => !prev);
     }
   };
 

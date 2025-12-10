@@ -1,31 +1,43 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./Dropdown.css";
 
-const Dropdown = ({
+interface DropdownProps {
+  label?: string;
+  options?: string[];
+  onSelect?: (option: string) => void;
+  placeholder?: string;
+  width?: string;
+  defaultValue?: string;
+}
+
+const Dropdown: React.FC<DropdownProps> = ({
   label,
   options = [],
   onSelect,
   placeholder = "Select an option",
   width = "200px",
-  defaultValue = null,
+  defaultValue = "",
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState(defaultValue);
-  const dropdownRef = useRef(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const handleSelect = (option) => {
+  const handleSelect = (option: string) => {
     setSelected(option);
     setIsOpen(false);
-    if (onSelect) onSelect(option);
+    onSelect?.(option);
   };
 
-  // Close dropdown on outside click
   useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(e.target as Node)
+      ) {
         setIsOpen(false);
       }
     };
+
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
@@ -39,6 +51,7 @@ const Dropdown = ({
         onClick={() => setIsOpen(!isOpen)}
       >
         <span>{selected || placeholder}</span>
+
         <svg
           className={`dropdown-icon ${isOpen ? "rotate" : ""}`}
           xmlns="http://www.w3.org/2000/svg"
@@ -77,4 +90,3 @@ const Dropdown = ({
 };
 
 export default Dropdown;
-
