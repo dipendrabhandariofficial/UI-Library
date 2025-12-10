@@ -5,7 +5,6 @@ export const validateForm = (values, rules = {}) => {
   Object.keys(rules).forEach((field) => {
     const value = values[field];
     const fieldRules = rules[field];
-    console.log("🚀 ~ validateForm ~ fieldRules:", fieldRules);
 
     // Skip validation if field has no value and is not required
     if (!fieldRules.isRequired && (!value || value === "")) {
@@ -35,8 +34,7 @@ export const validateForm = (values, rules = {}) => {
     if (fieldRules.minLength && stringValue.length < fieldRules.minLength) {
       errors[field] =
         fieldRules.msg?.minLength ||
-        `${formatFieldName(field)} must be at least ${
-          fieldRules.minLength
+        `${formatFieldName(field)} must be at least ${fieldRules.minLength
         } characters`;
       return;
     }
@@ -45,8 +43,7 @@ export const validateForm = (values, rules = {}) => {
     if (fieldRules.maxLength && stringValue.length > fieldRules.maxLength) {
       errors[field] =
         fieldRules.msg?.maxLength ||
-        `${formatFieldName(field)} must not exceed ${
-          fieldRules.maxLength
+        `${formatFieldName(field)} must not exceed ${fieldRules.maxLength
         } characters`;
       return;
     }
